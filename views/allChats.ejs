@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Whatsapp</title>
+</head>
+<body>
+    <h2>Chats</h2>
+    <hr>
+    <form method="get" action="chats/new">
+        <button>New Chat</button>
+        <hr>
+        
+    </form>
+   <% for(c of chat){ %>
+        <div class="chat">
+            <p>From: <%=c.from %></p>
+            <div class="msg">
+               <p><%=c.message%></p>
+               <form method="get" action="/chats/<%=c._id%>/edit">
+                <button>Edit</button>
+               </form>
+            </div>
+            <p>To : <%=c.to%></p>
+            <hr>
+            <p><%=c.send_At.toString().split(" ")[4]%></p>
+            <p><%=c.send_At.toString().split(" ").splice(0,4).join(" ")%></p>
+            <br>
+            <form method="post" action="/chats/<%=c._id%>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </div>
+        <hr>
+   <% } %>
+</body>
+</html>

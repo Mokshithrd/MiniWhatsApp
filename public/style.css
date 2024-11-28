@@ -1,0 +1,22 @@
+h2{
+    color:green;
+}
+
+.chat{
+    margin-left: 20px;
+    background-color:aquamarine;
+    padding: 25px;
+    border-radius: 15px;
+    margin-right: 195px;
+}
+.msg{
+    padding: 15px;
+    background-color: blue;
+    color: aliceblue;
+    border-radius: 15px;
+}
+
+button{
+    color:black;
+    background-color: lawngreen;
+}
